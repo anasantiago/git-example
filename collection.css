@@ -1,0 +1,47 @@
+h1 {
+    font-size: 1em;
+    color: black;
+    font-family:helvetica;
+    margin-top: 1em;
+    font-weight:bold;
+    padding-top:0;
+    line-height: 80%;
+    letter-spacing: -.01em;
+}
+
+.hand {
+    padding-bottom: 2em;
+    color: black;
+    font-family: helvetica;
+    font-size: 4em;
+}
+
+
+.d {
+    font-size: .10em;
+    font-family: helvetica;
+    color: black;
+}
+
+body {
+    padding-top: 1em;
+    margin-top: 0em;
+    margin-bottom: 10em;
+}
+
+p {
+    font-family:helvetica;
+    color:black;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+textarea{
+    width:250px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+    box-shadow: none;
+    margin-top: 10px;
+
+}
