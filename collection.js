@@ -9,20 +9,47 @@ var Hands = new Mongo.Collection("hands");
 if (Meteor.isClient) {
   
   Template.body.helpers({
-     
     // The signups helper returns a list of the signups.
     // Find all the signups in the database and return them.
     hands: function() {
-        return Hands.find({}, {sort: {time: 1}});  
+        return Hands.find({}, {sort: {age: 1}});  
+    },
+    
+    ages: function() {
+        var ages = [];
+        for (var i = 0; i <= 100; i += 5) {
+          ages.push(i);
+        }
+        return ages;
+    },
+
+    is_age: function(age) {
+      var low_range = parseInt(this.age.split('-')[0]);
+      var high_range = parseInt(this.age.split('-')[1]);
+      if ((low_range >= age) && (high_range <= age + 5)) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    },
+    
+    is_male: function() {
+      return this.gender == 'male';
+    },
+    is_female: function() {
+      return this.gender == 'female';
     }
-     
+    
+         
   }); 
+
 
   Template.hand.events({
     
     // This function is called whenever there is a click
     // event on a delete link in the "signup" template
-    "click .delete": function(event) {
+    "click.delete": function(event) {
       
       // Tell the browser not to do its default behavior 
       // (which would reload the page)
@@ -52,23 +79,13 @@ if (Meteor.isClient) {
       
       // Insert a signup into the database collection
       Hands.insert({
-        gender: form.owner.value,
-
+        gender: form.gender.value,
+        size: form.size.value,
+        age: form.age.value,
+        shape: form.shape.value,
+        eccentricity: form.eccentricity.value
       });
-      
-      // Clear the text fields
-      form.gender.value = '';
-      form.size.value = '';
-      form.age.value = '';
-      form.eccentricity.value = '';
-
-      // Focus the name field
-      form.gender.focus();
-      
     }
-    
-  });
-  
+      });
+
 }
-
-
