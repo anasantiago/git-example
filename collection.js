@@ -3,12 +3,16 @@
 // Declare a collection in the Mongo database
 var Hands = new Mongo.Collection("hands");
 
+// Associate URLs with templates
+Router.route('/', {template: 'home'});
+Router.route('/numberline', {template: 'numberline'});
+Router.route('/grid', {template: 'grid'});
 
 // This code executes only on the client
 
 if (Meteor.isClient) {
   
-  Template.body.helpers({
+  Template.numberline.helpers({
     // The signups helper returns a list of the signups.
     // Find all the signups in the database and return them.
     hands: function() {
@@ -49,7 +53,7 @@ if (Meteor.isClient) {
     
     // This function is called whenever there is a click
     // event on a delete link in the "signup" template
-    "click.delete": function(event) {
+    "click .delete": function(event) {
       
       // Tell the browser not to do its default behavior 
       // (which would reload the page)
@@ -62,8 +66,27 @@ if (Meteor.isClient) {
     }
     
   });
+  
+  Template.new.helpers({
+
+    // Returns true if the form should be shown
+    show_form: function() {
+      return Session.get('show_form');
+    }
+    
+  })
 
   Template.new.events({
+    
+    // Show/hide the form
+    "click .toggle_form": function(event) {
+      if (Session.get('show_form')) {
+        Session.set('show_form', false);
+      }
+      else {
+        Session.set('show_form', true);
+      }
+    },
     
     // This function is called whenever there is a submit
     // event in the "gender" template
@@ -72,7 +95,7 @@ if (Meteor.isClient) {
       // Tell the browser not to do its default behavior 
       // (which would reload the page)
       event.preventDefault();
-      
+    
       // Get the <form> HTML element (which by definition is
       // the target of the submit event)
       var form = event.target;
@@ -85,7 +108,11 @@ if (Meteor.isClient) {
         shape: form.shape.value,
         eccentricity: form.eccentricity.value
       });
+      
+      Session.set('show_form', false);
+      
     }
-      });
-
+    
+  });
 }
+    

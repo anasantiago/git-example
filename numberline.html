@@ -1,62 +1,69 @@
-<head>
-<title>give me a hand</title>
-</head>
+<template name="numberline">
 
-<body>
-    <h1><b>give me a hand </b></h1>
+<link rel="stylesheet" href="/path/to/css/styles.css" 
+type="text/css" charset="utf-8" />
+  <div class="numberline">
+    
+    {{> new}}
   
-  {{> new}}
-
-  <table>
-    
-    <tr class="male">
-      {{#each age in ages}}
-        <td>
-          {{#each hands}}
-            {{#if is_male}}
-              {{#if is_age age}}
-                {{> hand}}
+    <table>
+      
+      <tr class="male">
+        {{#each age in ages}}
+          <td>
+            {{#each hands}}
+              {{#if is_male}}
+                {{#if is_age age}}
+                  {{> hand}}
+                {{/if}}
               {{/if}}
-            {{/if}}
-          {{/each}}  
-        </td>
-      {{/each}}
-    </tr>
-    
-    <tr class="ages">
-      {{#each age in ages}}
-        <td>
-          {{age}}
-        </td>
-      {{/each}}
-    </tr>
-    
-    <tr class="female">
-      {{#each age in ages}}
-        <td>
-          {{#each hands}}
-            {{#if is_female}}
-              {{#if is_age age}}
-                {{> hand}}
+            {{/each}}  
+          </td>
+        {{/each}}
+      </tr>
+      
+      <tr class="ages">
+        {{#each age in ages}}
+          <td>
+            {{age}}
+          </td>
+        {{/each}}
+      </tr>
+      
+      <tr class="female">
+        {{#each age in ages}}
+          <td>
+            {{#each hands}}
+              {{#if is_female}}
+                {{#if is_age age}}
+                  {{> hand}}
+                {{/if}}
               {{/if}}
-            {{/if}}
-          {{/each}}  
-        </td>
-      {{/each}}
-    </tr>
-    
-  </table>
+            {{/each}}  
+          </td>
+        {{/each}}
+      </tr>
+      
+    </table>
+  </div>
 
-</body>
+</template>
 
 <template name="hand">
+
+
   <div class="{{gender}} {{shape}} {{age}} {{size}}">
  {{eccentricity}}
-    
+        <a href="#" class="delete">delete</a>
   </div>
 </template>
 
 <template name="new">
+<a href="#" class="toggle_form"><h1><b>give me a hand </b></h1></a>
+
+{{#if show_form}}
+<div id="giveme">  
+
   <head>
     </head>
   <form>
@@ -67,7 +74,11 @@
   {{> eccentricity}} <br>
   <input type="submit">
   </form>
+</div>
+{{/if}}
+
 </template>
+
 
 <template name= "gender">
 <select name="gender">

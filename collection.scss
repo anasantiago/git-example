@@ -1,0 +1,241 @@
+@font-face {
+   font-family:PxGrotesk-Regular;
+   src: url(PxGrotesk-Regular.woff);
+}
+.home {
+
+  width: 100%;
+  height: 100%;
+
+  h1 {
+      font-size: 100px;
+      color: black;
+      font-family:PxGrotesk-Regular;
+      font-weight: normal;
+      margin-top: 25px;
+      padding-top:0;
+      margin-left: 20px;
+  }
+  
+  
+  img{
+      width: 700px;
+      margin-left: -30px;
+  }
+  #showme {
+      font-family:PxGrotesk-Regular;
+      color:black;
+      margin-left:550px;
+      margin-top: -50px;
+      text-align: left;
+      font-size: 100px;
+      border-style: none;
+  }
+  
+  #showmeimage {
+      margin-left:-50px;
+      margin-top: -200px;
+  }
+  #tellme {
+      font-family:PxGrotesk-Regular;
+      color:black;
+      margin-left:400px;
+      margin-top: -180px;
+      text-align: left;
+      font-size: 100px;
+      border-style: none;
+  }
+  
+  #tellmeimage {
+      margin-left:550px;
+      margin-top: -400px;
+  }
+  
+  
+  ul {
+      list-style-type: none;
+      font-family:PxGrotesk-Regular;
+      color:black;
+      
+  }
+  
+  li a {
+      color: black;
+      text-decoration: none;
+      font-family:PxGrotesk-Regular;
+      font-size: 105px;
+      
+  }
+  
+  a:hover {
+      text-decoration: underline;
+  }
+  
+}
+
+.numberline {
+  height: auto;
+.body{
+  height:100%;
+}
+  h1 {
+      font-size: 30px;
+      color: black;
+      font-family:PxGrotesk-Regular;
+      margin-top: 15px;
+      font-weight:regular;
+      padding-top:0;
+      line-height: 80%;
+      letter-spacing: -.01em;
+      text-decoration: underline;
+
+  }
+  
+  .template{
+      border-color:black;
+      background-color: white;
+      font-family: helvetica;
+      font-size: 12px;
+  }
+  
+  .form{
+      background-color: white;
+  }
+  
+  
+  .delete {
+      font-size: 15px;
+      font-family: helvetica;
+      font-weight: bold;
+      color: gray;
+     -webkit-text-stroke-width: 0px;
+  }
+  
+  padding-top: 1em;
+  margin-top: 0em;
+  margin-bottom: 10em;
+  background-color:white;
+
+  p {
+      font-family:PxGrotesk-Regular;
+      color:black;
+      font-weight: bold;
+  }
+  
+  textarea{
+      width: 250px;
+      height: 50px;
+      border-width: 1px;
+      box-shadow: none;
+      margin-top: 10px;
+      background-color: white;
+      color: gray;
+
+  }
+  
+  td {
+      white-space: nowrap;
+  
+  }
+  
+  .male {
+      color:black;
+      font-family:PxGrotesk-Regular;
+      white-space: normal;
+  
+  }
+  
+  .female {
+      color: black;
+      font-family:PxGrotesk-Regular;
+      white-space: normal;
+  
+      
+  }
+  
+  .thin{
+      font-weight:lighter;
+  }
+  
+  .strong{
+      font-weight: bold;
+  }
+  
+  .fat{
+      font-weight: bold;
+     -webkit-text-stroke-width: 2px;
+      
+  }
+  .template{
+      color: gray;
+  }
+  
+  .xl{
+      line-height:80%; 
+      font-size: 200px;
+  }
+  
+  .l{
+      line-height:80%; 
+      font-size: 100px;
+  }
+  
+    .m{
+      line-height:80%; 
+      font-size: 60px;
+  }
+  
+      .s{
+      line-height:80%; 
+      font-size: 20px;
+  }
+  
+        .xs{
+      line-height:80%; 
+      font-size: 10px;
+  }
+  
+  select {
+      border-radius: 0px;
+      border-style:solid;
+      border:1px;
+      border-color:black;
+      
+  }
+  
+  
+  input[type=submit] {
+    background-color: white;
+    border: 1px;
+    color: gray;
+    border-color: black;
+    border-style: solid;
+  }
+      
+  tr.ages{
+    font-family: helvetica;
+    font-size: 13px;
+    font-weight: bold;
+    color: black;
+    margin-top: 10px;
+  }
+  
+  .table{
+     /* margin-top: 350px; */
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+   }
+   
+   
+   
+  
+}
+
+#numberline{
+  height:100%;
+  
+}
+
